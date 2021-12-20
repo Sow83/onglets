@@ -1,0 +1,161 @@
+/* 
+* 1. la hauteur de l'image s'adapte avec le texte quel que soit la lageur de la fenêtre
+* 2. Masquer le texte hors du conteneur durant l'animation
+* 3. Masque le contenu
+* 4. Fait apparaitre le contenu
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: rgb(241,245,248);
+  line-height: 1.5;
+  letter-spacing: .9px;
+  font-family: 'Playfair Display', serif;
+}
+.container{
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 2rem ;
+}
+.tabs-title{
+  text-align: center;
+  margin-bottom: 50px;
+}
+.container p{
+  color: hsl(210, 22%, 49%);
+}
+.tabs-title h1{
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  color: rgb(97, 125, 152);
+}
+.content{
+  display: flex;
+}
+.img-container{
+  width: 50%;
+  margin-right: 2rem;
+}
+
+.img-container img{
+  width: 100%;
+  min-height: 100%; /* [1] */
+  object-fit: cover;
+  border-radius: 8px;
+}
+.tab-container{
+  width: 50%;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden; /* [2] */
+}
+.tabs{
+  display: flex;
+  justify-content: space-around; 
+}
+.tab{
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  letter-spacing: 2px;
+  font-size: 18px;
+  background:hsl(212, 33%, 89%);
+  color: rgb(97, 125, 152);
+  cursor: pointer;
+}
+.tab:nth-child(1){
+  border-top-left-radius: 8px;
+}
+.tab:nth-child(3){
+  border-top-right-radius: 8px;
+}
+.tab-text h2{
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: rgb(97, 125, 152);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.tab.active{
+  background-color: white;
+}
+
+/* [3] */
+.tab-text{
+  padding: 20px 15px;
+  display: none;
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+/* [4] */
+.tab-text.active{
+  display: block;
+}
+
+/* Animations */
+@-webkit-keyframes fadeInRight {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
+} 
+/* Fin animations */
+
+/* Media queries */
+@media screen and (max-width: 900px)
+{
+  .tabs-title h1{
+    font-size: 2rem;
+  } 
+  .content{
+    display: initial;
+  } 
+  .img-container{
+    width: 100%;
+    margin-bottom: 1.5rem;   
+  } 
+  .tab-container{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 400px)
+{
+  .tabs-title h1{
+    font-size: 1.5rem;
+  }
+  .tab-text p{
+    font-size: 12px;
+  }
+  .container{
+    padding: 0 .5rem ;
+  }
+  .tab{
+    font-size: 12px;
+    padding:  10px 0px 10px 2px;
+  }
+  .tab-text h2{
+    font-size: 12px;
+  }
+}
