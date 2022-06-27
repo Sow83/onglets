@@ -20,7 +20,7 @@ body{
 .container{
   max-width: 1200px;
   margin: 100px auto;
-  padding: 0 2rem ;
+  padding: 0 32px;
 }
 .tabs-title{
   text-align: center;
@@ -30,7 +30,7 @@ body{
   color: hsl(210, 22%, 49%);
 }
 .tabs-title h1{
-  font-size: 2.5rem;
+  font-size: 40px;
   letter-spacing: 2px;
   color: rgb(97, 125, 152);
 }
@@ -39,7 +39,7 @@ body{
 }
 .img-container{
   width: 50%;
-  margin-right: 2rem;
+  margin-right: 32px;
 }
 
 .img-container img{
@@ -127,14 +127,14 @@ body{
 @media screen and (max-width: 900px)
 {
   .tabs-title h1{
-    font-size: 2rem;
+    font-size: 32px;
   } 
   .content{
     display: initial;
   } 
   .img-container{
     width: 100%;
-    margin-bottom: 1.5rem;   
+    margin-bottom: 24px;   
   } 
   .tab-container{
     width: 100%;
@@ -143,13 +143,13 @@ body{
 @media screen and (max-width: 400px)
 {
   .tabs-title h1{
-    font-size: 1.5rem;
+    font-size: 24px;
   }
   .tab-text p{
     font-size: 12px;
   }
   .container{
-    padding: 0 .5rem ;
+    padding: 8px;
   }
   .tab{
     font-size: 12px;
